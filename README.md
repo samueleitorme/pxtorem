@@ -10,18 +10,20 @@ Esta función sencilla convierte los píxeles a rem, desde la terminal. Muy úti
     ```
 4. Añade esta función al final de tu archivo.
 
-    ```powershell
-    # Px To Rem
-    function pxtorem {
-       param (
-          [Parameter(Position = 0)]
-          [int]$px
-       )
-       $rem = $px / 16
-       $salida = '{0}px -> {1}rem' -f $px, $rem
-       Write-Host $salida
-    }
-    ```
+      ```powershell
+      # Px To Rem
+      function pxtorem {
+         param (
+            [Parameter(Position = 0)]
+            [int]$px,
+            [Parameter(Position = 1)]
+            [int]$base = 16
+         )
+         $rem = $px / $base
+         $salida = '{0}px -> {1}rem' -f $px, $rem
+         Write-Host $salida
+      }
+      ```
 
 ## Ejemplo de uso
 
