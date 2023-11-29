@@ -31,7 +31,7 @@ Esta función sencilla convierte los píxeles a rem, desde la terminal. Muy úti
 
     ```powershell
     # Sintaxis
-    # pxtorem <pixeles>
+    # pxtorem <pixeles> <base=16>
     pxtorem 64
     ```
 - Salida
