@@ -1,35 +1,36 @@
-function pxtorem {
 <#
 .SYNOPSIS
-    Convierte píxeles a REM.
+Convierte píxeles a REM.
 
 .DESCRIPTION
-    Convierte un número de píxeles a REM utilizando la fórmula REM = píxel / tamaño base.
+Convierte el número de píxeles introducido a en unidades rem.
 
 .PARAMETER px
-    El número de píxeles que se van a convertir.
+El número de píxeles que se van a convertir.
 
 .PARAMETER base
-    El tamaño de fuente predeterminado en píxeles.
+El tamaño de fuente predeterminado en píxeles.
 
 .EXAMPLE
-    pxtorem 32 16
+pxtorem 32 16
 
-    Convierte 32 píxeles a REM utilizando un tamaño de fuente predeterminado de 16 píxeles.
+Convierte 32 píxeles a REM utilizando un tamaño de fuente predeterminado de 16 píxeles.
+> 32px -> 2rem
 
 .NOTES
-    Autor: Samuel Reche
-    Sitio web: http://samueleitor.me
-    Github: @samueleitor.me
-#>
+Autor: Samuel Reche
+Sitio web: https://samueleitor.me
+Github: @samueleitor.me
 
-   param (
-      [Parameter(Position = 0)]
-      [int]$px,
-      [Parameter(Position = 1)]
-      [int]$base = 16
-   )
-   $rem = $px / $base
-   $salida = '{0}px -> {1}rem' -f $px, $rem
-   Write-Host $salida
+#>
+function pxtorem {
+    param (
+        [Parameter(Position = 0, Mandatory = $true)]
+        [int]$px,
+        [Parameter(Position = 1)]
+        [int]$base = 16
+    )
+    $rem = $px / $base
+    $salida = '{0}px -> {1}rem' -f $px, $rem
+    Write-Host $salida
 }

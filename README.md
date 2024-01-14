@@ -1,43 +1,41 @@
 # Px To Rem
+
 Esta función sencilla convierte los píxeles a rem, desde la terminal. Muy útil la verdad. 😄
 
 ## Instalación
-1. Abre una terminal con Powershell.
-2. Modifica el archivo $PROFILE.
-   
-    ```powershell
-    notepad $PROFILE
-    ```
-4. Añade esta función al final de tu archivo.
 
-      ```powershell
-      # Px To Rem
-      function pxtorem {
-         param (
-            [Parameter(Position = 0)]
-            [int]$px,
-            [Parameter(Position = 1)]
-            [int]$base = 16
-         )
-         $rem = $px / $base
-         $salida = '{0}px -> {1}rem' -f $px, $rem
-         Write-Host $salida
-      }
-      ```
+1. Abre una terminal con Powershell.
+2. Ejecuta el siguiente comando.
+
+   ```powershell
+   Invoke-WebRequest -Uri "https://raw.githubusercontent.com/samueleitorme/pxtorem/main/pxtorem.ps1" -OutFile "$env:USERPROFILE\Documents\Powershell\Scripts\pxtorem.ps1"
+   ```
+
+   De esta forma simplemente poniendo `pxtorem` en la terminal funciona.
+
+---
+Otra forma de instalación
+Crea un script en 
 
 ## Ejemplo de uso
 
-- Ejecución.
+  - **Ejecución**
 
     ```powershell
     # Sintaxis
     # pxtorem <pixeles> <base=16>
     pxtorem 64
     ```
-- Salida
 
-  ```powershell
-  64px -> 4rem
-  ```
+  - **Salida**
+
+    ```powershell
+    64px -> 4rem
+    ```
+  - **Ayuda**
+
+    ```powershell
+    Get-Help pxtorem
+    ```
 
 ![Demostración de uso](./pxtorem-demo.gif)
